@@ -48,6 +48,7 @@ public class MapLoader : MonoBehaviour
         Input.location.Start();
         while (Input.location.status == LocationServiceStatus.Initializing) ;
         var position = Input.location.lastData.latitude.ToString() + ',' + Input.location.lastData.longitude.ToString();
+        Input.location.Stop();
         return position;
     }
     IEnumerator RequestMap(string URI)
